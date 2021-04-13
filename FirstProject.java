@@ -4,18 +4,29 @@ public class  FirstProject
 {
    public static void main(String[] args)
    {
-   String header = "Computer Hardware Graphics Quality Recommendation Tool";
-   // Variable Dec
+      // Variable Dec
    int gpu = 0;
    double pscore = 0.0;
    double multiplier = 0.0;
    int core = 0;
    int cpu = 0;
+   int computer = 0;
    String resolution = "";
-   
-   // Ask the user to enter the clock speed (in Megahertz) of their graphics card (GPU).
+   Scanner keyboard = new Scanner(System.in);
    Scanner input = new Scanner(System.in);
-   System.out.println("Enter GPU Clock Speed: "); //This is an indicator of how fast their graphics card is.
+   
+   String header = "Computer Hardware Graphics Quality Recommendation Tool";
+        System.out.println(header);
+   String Choice;
+   
+   // Ask the user to enter amount of computers
+   
+   System.out.println("How many computers are being processed?");
+   computer = input.nextInt();
+   
+   do {  
+   // Ask the user to enter the clock speed (in Megahertz) of their graphics card (GPU).
+      System.out.println("Enter GPU Clock Speed: "); //This is an indicator of how fast their graphics card is.
    
    gpu = input.nextInt();
    // Ask the user to enter the clock speed (in Megahertz) of their graphics card (CPU).
@@ -74,8 +85,10 @@ public class  FirstProject
    " CPU Clock Speed: " + cpu + " MHz" + "\n" +
    " CPU Cores: " + core + "\n" +
    " Resolution Choice: " + resolution + "\n");
+   computer--;
    
-   
+   }
+      while (computer > 0);
    
    }
 }
